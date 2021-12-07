@@ -99,23 +99,23 @@ print(fleet_manufacturer)
 
 # group by aircraft type to see the current popularity of different aircraft types
 type_by_company = fleet_manufacturer.groupby(["Aircraft Type"])["Current"].sum()
-type_by_company.plot(kind="bar")
+type_by_company.plot(kind="bar", title='Total Number of Aircraft Type Currently in the Fleet of All Top 100+ Airlines')
 plt.show()
 
 # current market share between Airbus and Boeing
 type_by_manufacturer = fleet_manufacturer.groupby(["Manufacturer"])["Current"].sum()
-type_by_manufacturer.plot(kind="pie")
+type_by_manufacturer.plot(kind="pie", title='Current Market Share between Airbus and Boeing')
 plt.show()
 
 # future market share between Airbus and Boeing
 future_type_by_manufacturer = fleet_manufacturer.groupby(["Manufacturer"])["Orders"].sum()
-future_type_by_manufacturer.plot(kind="pie")
+future_type_by_manufacturer.plot(kind="pie", title='Future Market Share between Airbus and Boeing')
 plt.show()
 
 # group by aircraft type to see the mean of the number of orders by number of the aircraft type users
 
 orders_by_type = fleet_manufacturer.groupby(["Aircraft Type"])["Orders"].mean()
-orders_by_type.plot(kind="bar")
+orders_by_type.plot(kind="bar", title='Mean of All Ordered Aircraft by Aircraft Type')
 plt.show()
 
 

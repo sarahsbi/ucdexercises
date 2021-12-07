@@ -1,3 +1,7 @@
-print(1+1)
+import pandas as pd
 
-print("Hello")
+netflix_data= pd.read_csv("netflix_titles.csv")
+
+drop_duplicates= netflix_data.drop_duplicates(subset=['type'])
+print(netflix_data.shape,drop_duplicates.shape)
+
